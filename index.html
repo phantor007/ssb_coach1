@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSB Coach - Your Gateway to Defence Excellence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="logo">
+                    <h1>SSB Coach</h1>
+                    <span class="tagline">Your Gateway to Defence Excellence</span>
+                </div>
+                <nav class="nav">
+                    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+                    <ul class="nav__list">
+                        <li><a href="#home" class="nav__link active">Home</a></li>
+                        <li><a href="#coaches" class="nav__link">SSB Coaches</a></li>
+                        <li><a href="#centers" class="nav__link">Center Reviews</a></li>
+                        <li><a href="#practice" class="nav__link">Practice Tests</a></li>
+                        <li><a href="#blogs" class="nav__link">Blogs</a></li>
+                    </ul>
+                </nav>
+                <div class="header__actions">
+                    <button class="btn btn--secondary auth-btn" id="loginBtn">Login</button>
+                    <button class="btn btn--primary auth-btn" id="registerBtn">Register</button>
+                    <div class="user-menu hidden" id="userMenu">
+                        <span class="user-name" id="userName"></span>
+                        <button class="btn btn--outline" id="logoutBtn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Page -->
+        <section id="home" class="page page--active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero__content">
+                        <h1 class="hero__title">Master Your SSB Interview</h1>
+                        <p class="hero__subtitle">India's premier platform for SSB interview preparation, coaching, and guidance</p>
+                        <div class="hero__actions">
+                            <button class="btn btn--primary btn--lg" onclick="showPage('coaches')">Find SSB Coaches</button>
+                            <button class="btn btn--secondary btn--lg" onclick="showPage('practice')">Practice Tests</button>
+                            <button class="btn btn--outline btn--lg" onclick="showPage('centers')">Center Reviews</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SSB Information Section -->
+            <section class="ssb-info">
+                <div class="container">
+                    <h2>About SSB Interview Process</h2>
+                    <div class="ssb-info__content">
+                        <p class="ssb-info__description">
+                            The Service Selection Board (SSB) interview is a comprehensive 5-day selection process conducted by the Indian Armed Forces to evaluate candidates for officer-level positions. The process includes screening tests, psychological evaluations, group tasks, personal interviews, and a final conference.
+                        </p>
+                        
+                        <div class="stages-grid">
+                            <div class="stage-card">
+                                <h3>Stage 1 - Screening</h3>
+                                <span class="stage-duration">Day 1</span>
+                                <ul>
+                                    <li>Officer Intelligence Rating (OIR)</li>
+                                    <li>Picture Perception & Discussion Test (PPDT)</li>
+                                </ul>
+                                <p>Initial screening to filter potential candidates</p>
+                            </div>
+                            
+                            <div class="stage-card">
+                                <h3>Stage 2 - Psychology</h3>
+                                <span class="stage-duration">Day 2</span>
+                                <ul>
+                                    <li>Thematic Apperception Test (TAT)</li>
+                                    <li>Word Association Test (WAT)</li>
+                                    <li>Situation Reaction Test (SRT)</li>
+                                    <li>Self Description (SD)</li>
+                                </ul>
+                                <p>Psychological assessment to evaluate personality traits</p>
+                            </div>
+                            
+                            <div class="stage-card">
+                                <h3>GTO Tasks</h3>
+                                <span class="stage-duration">Day 3-4</span>
+                                <ul>
+                                    <li>Group Discussion</li>
+                                    <li>Group Planning Exercise</li>
+                                    <li>Progressive Group Task</li>
+                                    <li>Individual Obstacles</li>
+                                </ul>
+                                <p>Group Testing Officer evaluates leadership and teamwork skills</p>
+                            </div>
+                            
+                            <div class="stage-card">
+                                <h3>Personal Interview</h3>
+                                <span class="stage-duration">Day 2-4</span>
+                                <ul>
+                                    <li>Personal Interview with Interviewing Officer</li>
+                                </ul>
+                                <p>One-on-one interview to assess Officer Like Qualities</p>
+                            </div>
+                            
+                            <div class="stage-card">
+                                <h3>Conference</h3>
+                                <span class="stage-duration">Day 5</span>
+                                <ul>
+                                    <li>Final Board Conference</li>
+                                </ul>
+                                <p>Final evaluation by all assessors to make recommendation decision</p>
+                            </div>
+                        </div>
+                        
+                        <div class="olq-section">
+                            <h3>Officer Like Qualities (OLQ)</h3>
+                            <div class="olq-grid">
+                                <span class="olq-item">Effective Intelligence</span>
+                                <span class="olq-item">Reasoning Ability</span>
+                                <span class="olq-item">Organizing Ability</span>
+                                <span class="olq-item">Power of Expression</span>
+                                <span class="olq-item">Social Adaptability</span>
+                                <span class="olq-item">Cooperation</span>
+                                <span class="olq-item">Sense of Responsibility</span>
+                                <span class="olq-item">Initiative</span>
+                                <span class="olq-item">Self Confidence</span>
+                                <span class="olq-item">Speed of Decision</span>
+                                <span class="olq-item">Ability to Influence the Group</span>
+                                <span class="olq-item">Liveliness</span>
+                                <span class="olq-item">Determination</span>
+                                <span class="olq-item">Courage</span>
+                                <span class="olq-item">Stamina</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Blogs Section -->
+            <section class="featured-blogs">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Latest Blogs</h2>
+                        <button class="btn btn--outline" onclick="showPage('blogs')">More Blogs</button>
+                    </div>
+                    <div class="blogs-grid" id="featuredBlogs"></div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Success Stories</h2>
+                        <button class="btn btn--outline" onclick="showPage('centers')">More Reviews</button>
+                    </div>
+                    <div class="testimonials-grid" id="testimonialsList"></div>
+                </div>
+            </section>
+        </section>
+
+        <!-- SSB Coaches Page -->
+        <section id="coaches" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>SSB Coaches</h1>
+                    <p>Find expert SSB coaches and trainers to guide your preparation</p>
+                    <div class="page-actions">
+                        <button class="btn btn--primary" onclick="showTeacherRegistration()">List Yourself as SSB Teacher</button>
+                        <button class="btn btn--secondary" onclick="showContactModal()">Contact Consultant</button>
+                    </div>
+                </div>
+                
+                <div class="coaches-filters">
+                    <div class="filter-group">
+                        <label>Sort by:</label>
+                        <select class="form-control" id="coachSort">
+                            <option value="rating">Rating</option>
+                            <option value="experience">Experience</option>
+                            <option value="location">Location</option>
+                            <option value="charges">Charges</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Location:</label>
+                        <select class="form-control" id="locationFilter">
+                            <option value="">All Locations</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Lucknow">Lucknow</option>
+                            <option value="Pune">Pune</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="coaches-grid" id="coachesList"></div>
+            </div>
+        </section>
+
+        <!-- SSB Centers Page -->
+        <section id="centers" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>SSB Center Reviews</h1>
+                    <p>Read reviews and ratings of SSB centers across India</p>
+                    <div class="page-actions">
+                        <button class="btn btn--secondary" onclick="showContactModal()">Contact Consultant</button>
+                    </div>
+                </div>
+                
+                <div class="centers-filters">
+                    <div class="filter-group">
+                        <label>Sort by:</label>
+                        <select class="form-control" id="centerSort">
+                            <option value="rating">Difficulty Rating</option>
+                            <option value="reviews">Reviews Count</option>
+                            <option value="service">Service</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Service:</label>
+                        <select class="form-control" id="serviceFilter">
+                            <option value="">All Services</option>
+                            <option value="Indian Army">Indian Army</option>
+                            <option value="Indian Air Force">Indian Air Force</option>
+                            <option value="Indian Navy">Indian Navy</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="centers-grid" id="centersList"></div>
+            </div>
+        </section>
+
+        <!-- Practice Tests Page -->
+        <section id="practice" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Practice Tests</h1>
+                    <p>Prepare for different stages of SSB interview with our comprehensive practice tests</p>
+                </div>
+                
+                <div class="practice-tests-grid" id="practiceTestsList"></div>
+            </div>
+        </section>
+
+        <!-- Blogs Page -->
+        <section id="blogs" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Blogs & Articles</h1>
+                    <p>Expert insights and preparation tips for SSB interview success</p>
+                </div>
+                
+                <div class="blogs-grid" id="allBlogsList"></div>
+            </div>
+        </section>
+
+        <!-- Registration Page -->
+        <section id="register" class="page">
+            <div class="container">
+                <div class="registration-form-container">
+                    <h1>Create Your Account</h1>
+                    <form class="registration-form" id="registrationForm">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="regName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="regEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="regPhone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="regPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="regConfirmPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Account Type</label>
+                            <select class="form-control" id="regAccountType">
+                                <option value="student">Student</option>
+                                <option value="teacher">Teacher</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="regTerms" required>
+                                I agree to the Terms and Conditions
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full-width">Create Account</button>
+                        
+                        <div class="form-footer">
+                            <p>Already have an account? <a href="#" onclick="showLoginModal()">Login here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teacher Registration Page -->
+        <section id="teacher-register" class="page">
+            <div class="container">
+                <div class="registration-form-container">
+                    <h1>Teacher Registration</h1>
+                    <p>Join our platform as an SSB coach and help aspirants achieve their dreams</p>
+                    
+                    <form class="registration-form" id="teacherRegistrationForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="teacherName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" id="teacherEmail" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="teacherPhone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Years of Experience</label>
+                                <input type="number" class="form-control" id="teacherExperience" min="1" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Specialization</label>
+                            <select class="form-control" id="teacherSpecialty" required>
+                                <option value="">Select Specialization</option>
+                                <option value="Psychology & GTO Training">Psychology & GTO Training</option>
+                                <option value="Personal Interview & Communication Skills">Personal Interview & Communication Skills</option>
+                                <option value="Screening Tests & OIR">Screening Tests & OIR</option>
+                                <option value="Group Tasks & Leadership Training">Group Tasks & Leadership Training</option>
+                                <option value="Complete SSB Preparation">Complete SSB Preparation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Location</label>
+                                <input type="text" class="form-control" id="teacherLocation" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Course Charges</label>
+                                <input type="text" class="form-control" id="teacherCharges" placeholder="e.g., ₹25,000 for 21-day course" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Qualifications</label>
+                            <textarea class="form-control" id="teacherQualifications" rows="3" placeholder="List your educational qualifications and certifications" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Bio / Description</label>
+                            <textarea class="form-control" id="teacherBio" rows="4" placeholder="Tell us about your background and teaching approach" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="teacherTerms" required>
+                                I agree to the Terms and Conditions for Teachers
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full-width">Submit for Review</button>
+                        
+                        <div class="form-footer">
+                            <p><a href="#" onclick="showPage('home')">Back to Home</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div class="modal hidden" id="loginModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login to Your Account</h3>
+                <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+            </div>
+            <form class="modal-body" id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" id="loginEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" required>
+                </div>
+                
+                <button type="submit" class="btn btn--primary btn--full-width">Login</button>
+                
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" onclick="closeModal('loginModal'); showPage('register')">Register here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal hidden" id="contactModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Our Consultant</h3>
+                <button class="modal-close" onclick="closeModal('contactModal')">&times;</button>
+            </div>
+            <form class="modal-body" id="contactForm">
+                <div class="form-group">
+                    <label class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="contactName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="contactEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Your Phone</label>
+                    <input type="tel" class="form-control" id="contactPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" id="contactMessage" rows="4" placeholder="How can we help you?" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="modal hidden" id="reviewModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="reviewModalTitle">Write Review</h3>
+                <button class="modal-close" onclick="closeModal('reviewModal')">&times;</button>
+            </div>
+            <form class="modal-body" id="reviewForm">
+                <div class="form-group">
+                    <label class="form-label">Rating</label>
+                    <div class="star-rating" id="starRating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Your Review</label>
+                    <textarea class="form-control" id="reviewText" rows="4" placeholder="Share your experience..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn--primary btn--full-width">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Subscription Modal -->
+    <div class="modal hidden" id="subscriptionModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Upgrade to Premium</h3>
+                <button class="modal-close" onclick="closeModal('subscriptionModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="subscription-plans">
+                    <div class="plan-card">
+                        <h4>Premium Plan</h4>
+                        <div class="plan-price">₹999/month</div>
+                        <ul class="plan-features">
+                            <li>Access to all practice tests</li>
+                            <li>View coach contact details</li>
+                            <li>SSB center location info</li>
+                            <li>Write reviews and ratings</li>
+                            <li>Progress tracking</li>
+                        </ul>
+                        <button class="btn btn--primary btn--full-width" onclick="subscribe()">Subscribe Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>SSB Coach</h3>
+                    <p>Your trusted partner for SSB interview preparation and defence career guidance.</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#coaches">SSB Coaches</a></li>
+                        <li><a href="#centers">Center Reviews</a></li>
+                        <li><a href="#practice">Practice Tests</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@ssbcoach.in</p>
+                    <p>Phone: +91-9876543210</p>
+                    <p>Address: New Delhi, India</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 SSB Coach. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
